@@ -8,17 +8,16 @@ fun main() {
 fun agoToText(ago : Int): String {
     val hour = 60 * 60
     val day = 24 * hour
-    var text = "был(а) в сети давно"
     val timeAgo = if (ago <= hour) ago/60 else ago/3600
     val minText = minToText(ago)
     val hourText = hourToText(ago)
-    when (ago){
-        in 0..60 -> text = "был(а) в сети только что"
-        in 61..hour -> text = "был(а) в сети $timeAgo $minText назад"
-        in (hour + 1)..day -> text = "был(а) в сети $timeAgo $hourText назад"
-        in (day + 1)..day*2 -> text = "был(а) в сети сегодня"
-        in (day*2 + 1)..day*3 -> text = "был(а) в сети вчера"
-        else -> {text}
+    val text = when (ago){
+        in 0..60 -> "был(а) в сети только что"
+        in 61..hour -> "был(а) в сети $timeAgo $minText назад"
+        in (hour + 1)..day -> "был(а) в сети $timeAgo $hourText назад"
+        in (day + 1)..day*2 -> "был(а) в сети сегодня"
+        in (day*2 + 1)..day*3 -> "был(а) в сети вчера"
+        else -> {"был(а) в сети давно"}
     }
     return text
 }
