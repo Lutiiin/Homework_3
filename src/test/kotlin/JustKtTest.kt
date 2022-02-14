@@ -60,6 +60,6 @@ internal class JustKtTest {
     @Test
     fun agoToText10() {
         val time = agoToText(360000)
-        Assert.assertEquals("был(а) в сети ", time)
+        Assert.assertEquals("был(а) в сети давно", time)
     }
 }
