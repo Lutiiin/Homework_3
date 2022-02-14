@@ -1,7 +1,7 @@
 import java.time.LocalDateTime
 
 fun main() {
-    val time = agoToText(18000)
+    val time = agoToText(120)
     println(time)
 }
 
